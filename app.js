@@ -1,8 +1,15 @@
 
-const searchButton = document.getElementById("search");
+const searchForm = document.getElementById("search-form");
+const queryInput = document.getElementById("query");
+const result = document.getElementById("result");
 
-searchButton.addEventListener("click", function () {
-    fetch("superheroes.php")
+searchForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const query = queryInput.value.trim();
+    const url = "superheroes.php?query=" + encodeURIComponent(query);
+
+    fetch(url)
         .then(function (response) {
             if (!response.ok) {
                 throw new Error("The request failed.");
@@ -11,10 +18,10 @@ searchButton.addEventListener("click", function () {
             return response.text();
         })
         .then(function (data) {
-            alert(data);
+            result.innerHTML = data;
         })
         .catch(function (error) {
-            alert("Unable to retrieve the superheroes. Please try again.");
+            result.textContent = "Unable to retrieve superhero information.";
             console.error(error);
         });
 });

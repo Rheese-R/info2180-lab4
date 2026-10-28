@@ -4,6 +4,7 @@ body {
     margin: 0;
     background-color: #f4f6f8;
     color: #333;
+    line-height: 1.6;
 }
 
 header {
@@ -25,6 +26,30 @@ main {
     border-radius: 8px;
 }
 
+h2 {
+    color: #263b50;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
 button {
     background-color: #263b50;
     color: white;
@@ -40,5 +65,20 @@ button:hover {
 }
 
 #result {
-    margin-top: 20px;
+    margin-top: 25px;
+    overflow-wrap: break-word;
+}
+
+#result h3 {
+    color: #263b50;
+    margin-bottom: 5px;
+}
+
+#result h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#result p {
+    margin-top: 0;
 }
